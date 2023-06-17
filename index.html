@@ -161,20 +161,21 @@
         </div>
         <body>
             <div class="card-container">
-              <div class="card">
-                <img src="path/to/image1.jpg" alt="Image 1">
-                <img src="path/to/image2.jpg" alt="Image 2">
+
+                <div class="card">
+                  <img src="img\teknofest\2023_uyz.jpg" alt="Image 1">
+                  <p>Açıklama 1</p>
+                  <img src="img\teknofest\2023_uyz.jpg" alt="Image 2">
+                  <p>Açıklama 2</p>
+                </div>
+                <div class="card">
+                  <img src="img\teknofest\2023_uyz.jpg" alt="Image 3">
+                  <p>Açıklama 3</p>
+                  <img src="img\teknofest\2023_uyz.jpg" alt="Image 4">
+                  <p>Açıklama 4</p>
+                </div>
+                <!-- Daha fazla kart ekleyebilirsiniz -->
               </div>
-              <div class="card">
-                <img src="path/to/image3.jpg" alt="Image 3">
-                <img src="path/to/image4.jpg" alt="Image 4">
-              </div>
-              <div class="card">
-                <img src="path/to/image5.jpg" alt="Image 5">
-                <img src="path/to/image6.jpg" alt="Image 6">
-              </div>
-              <!-- Daha fazla kart ekleyebilirsiniz -->
-            </div>
           </body>
           
     </div>
@@ -639,6 +640,7 @@
               display: flex;
               flex-wrap: wrap;
               justify-content: space-between;
+              overflow: hidden; /* Ekrandan taşan içeriği gizle */
             }
             .card {
               flex-basis: calc(50% - 10px);
@@ -649,15 +651,15 @@
               box-sizing: border-box;
               text-align: center;
             }
+
             .card img {
               max-width: 100%;
               height: auto;
               margin-bottom: 10px;
             }
-            @media screen and (max-width: 600px) {
-              .card {
-                flex-basis: 100%;
-              }
+
+            .card p {
+              margin: 0;
             }
           </style>
 
@@ -683,7 +685,17 @@
 
             }
 
-        </script>
+            const cards = document.querySelectorAll('.card');
+            let currentCardIndex = 0;
+
+            function showNextCard() {
+              cards[currentCardIndex].classList.remove('active');
+              currentCardIndex = (currentCardIndex + 1) % cards.length;
+              cards[currentCardIndex].classList.add('active');
+            }
+
+            setInterval(showNextCard, 100);
+          </script>
 </body>
 
 </html>
