@@ -46,7 +46,7 @@
                 <a href="#qualification" class="nav-item nav-link">Education</a>
                 <a href="#skill" class="nav-item nav-link">Skills</a>
                 <!--a href="#service" class="nav-item nav-link">Service</a-->
-                <a href="#testimonial" class="nav-item nav-link">Projects</a>
+                <a href="#photos" class="nav-item nav-link">Photos</a>
                 <!--a href="#blog" class="nav-item nav-link">Blog</a-->
                 <a href="#contact" class="nav-item nav-link">Contact</a>
             </div>
@@ -154,6 +154,7 @@
         </div>
     </div>
     <!-- About End -->
+    <div id="photos"> </div>
     <div class="container-fluid py-5" id="qualification">
         <div class="position-relative d-flex align-items-center justify-content-center">
             <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Photos</h1>
@@ -161,34 +162,35 @@
         </div>
 
         <body>
+
             <div class="card-container">
 
                 <div class="card">
                     <img src="img\teknofest\2023_uyz.jpg" alt="Image 1">
-                    <p>Açıklama 1</p>
+                    <p>Teknofest 2023</p>
                 </div>
                 <div class="card">
-                    <img src="img\teknofest\2023_uyz.jpg" alt="Image 1">
-                    <p>Açıklama 1</p>
+                    <img src="img\teknofest\2023_uyz_sahne.jpeg" alt="Image 1">
+                    <p>Teknofest Ulaşımda Yapay Zeka Türkiye 1.'liği</p>
                 </div>
                 <div class="card">
-                    <img src="img\teknofest\2023_uyz.jpg" alt="Image 1">
-                    <p>Açıklama 1</p>
+                    <img src="img\teknofest\2022_uyz.jpg" alt="Image 1">
+                    <p>Teknofest 2022</p>
                 </div>
                 <div class="card">
-                    <img src="img\teknofest\2023_uyz.jpg" alt="Image 1">
-                    <p>Açıklama 1</p>
+                    <img src="img\teknofest\2022_syz.jpeg" alt="Image 1">
+                    <p>Teknofest Sağlıkta Yapay Zeka Türkiye 3. 'lüğü</p>
                 </div>
                 <div class="card">
-                    <img src="img\teknofest\2023_uyz.jpg" alt="Image 1">
-                    <p>Açıklama 1</p>
+                    <img src="img\teknofest\2023_uyz_toplu.jpeg" alt="Image 1">
+                    <p>Teknofest 2023</p>
                 </div>
                 <div class="card">
-                    <img src="img\teknofest\2023_uyz.jpg" alt="Image 1">
-                    <p>Açıklama 1</p>
+                    <img src="img\teknofest\2023_hasanmandal.jpg" alt="Image 1">
+                    <p>Teknofest 2023</p>
                 </div>
                 <!-- Daha fazla kart ekleyebilirsiniz -->
-            </div>
+        </div>
         </body>
 
     </div>
@@ -650,32 +652,37 @@
         <a href="#" class="btn btn-outline-dark px-0 back-to-top"><i class="fa fa-angle-double-up"></i></a>
         <style>
             .card-container {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                max-width: 100%;
-                margin: auto;
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: center;
+              max-width: 100%;
+              margin: auto;
             }
 
             .card {
-                flex-basis: 50%;
-                margin-bottom: 20px;
-                padding: 10px;
-                box-sizing: border-box;
-                text-align: center;
-                display: none;
-                /* Kartları gizle */
+              flex-basis: calc(33.33% - 20px);
+              margin: 10px;
+              padding: 10px;
+              box-sizing: border-box;
+              text-align: center;
             }
 
             .card img {
-                max-width: 100%;
-                height: auto;
-                margin-bottom: 10px;
-                border-radius: 10px;
-                object-fit: cover;
+              max-width: 100%;
+              height: auto;
+              margin-bottom: 10px;
+              border-radius: 10px;
+              object-fit: cover;
+            }
+            .card-container{
+                padding-left: 50px;
+                padding-right: 50px;
+                padding-top: 50px;
+
             }
 
-            @media screen and (min-width: 600px) {
+
+            @media screen and (min-width: 250px) {
                 .card:nth-child(odd) {
                     display: block;
                     /* İlk fotoğrafı görüntüle */
