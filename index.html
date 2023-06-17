@@ -159,25 +159,38 @@
             <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Photos</h1>
             <h1 class="position-absolute text-uppercase text-primary">Photos</h1>
         </div>
+
         <body>
             <div class="card-container">
 
                 <div class="card">
-                  <img src="img\teknofest\2023_uyz.jpg" alt="Image 1">
-                  <p>Açıklama 1</p>
-                  <img src="img\teknofest\2023_uyz.jpg" alt="Image 2">
-                  <p>Açıklama 2</p>
+                    <img src="img\teknofest\2023_uyz.jpg" alt="Image 1">
+                    <p>Açıklama 1</p>
                 </div>
                 <div class="card">
-                  <img src="img\teknofest\2023_uyz.jpg" alt="Image 3">
-                  <p>Açıklama 3</p>
-                  <img src="img\teknofest\2023_uyz.jpg" alt="Image 4">
-                  <p>Açıklama 4</p>
+                    <img src="img\teknofest\2023_uyz.jpg" alt="Image 1">
+                    <p>Açıklama 1</p>
+                </div>
+                <div class="card">
+                    <img src="img\teknofest\2023_uyz.jpg" alt="Image 1">
+                    <p>Açıklama 1</p>
+                </div>
+                <div class="card">
+                    <img src="img\teknofest\2023_uyz.jpg" alt="Image 1">
+                    <p>Açıklama 1</p>
+                </div>
+                <div class="card">
+                    <img src="img\teknofest\2023_uyz.jpg" alt="Image 1">
+                    <p>Açıklama 1</p>
+                </div>
+                <div class="card">
+                    <img src="img\teknofest\2023_uyz.jpg" alt="Image 1">
+                    <p>Açıklama 1</p>
                 </div>
                 <!-- Daha fazla kart ekleyebilirsiniz -->
-              </div>
-          </body>
-          
+            </div>
+        </body>
+
     </div>
 
     <!-- Qualification Start -->
@@ -636,29 +649,44 @@
         <!-- Back to Top -->
         <a href="#" class="btn btn-outline-dark px-0 back-to-top"><i class="fa fa-angle-double-up"></i></a>
         <style>
+            .card-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                max-width: 100%;
+                margin: auto;
+            }
+
             .card {
-            flex-basis: calc(50% - 10px);
-            margin-bottom: 100px;
-            padding: 10px;
-            border: none; /* Çizgileri kaldır */
-            border-radius: 10px; /* Köşeleri yumuşat */
-            box-sizing: border-box;
-            text-align: center;
-            overflow: hidden; /* Ekrandan taşan içeriği gizle */
+                flex-basis: 50%;
+                margin-bottom: 20px;
+                padding: 10px;
+                box-sizing: border-box;
+                text-align: center;
+                display: none;
+                /* Kartları gizle */
             }
 
             .card img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 20px;
-            border-radius: 10px; /* Köşeleri yumuşat */
-            object-fit: cover;
+                max-width: 100%;
+                height: auto;
+                margin-bottom: 10px;
+                border-radius: 10px;
+                object-fit: cover;
             }
 
-            .card p {
-            margin: 0;
+            @media screen and (min-width: 600px) {
+                .card:nth-child(odd) {
+                    display: block;
+                    /* İlk fotoğrafı görüntüle */
+                }
+
+                .card:nth-child(odd)+.card {
+                    display: block;
+                    /* İkinci fotoğrafı görüntüle */
+                }
             }
-          </style>
+        </style>
 
         <script src="/code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="/stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
@@ -686,13 +714,13 @@
             let currentCardIndex = 0;
 
             function showNextCard() {
-              cards[currentCardIndex].classList.remove('active');
-              currentCardIndex = (currentCardIndex + 1) % cards.length;
-              cards[currentCardIndex].classList.add('active');
+                cards[currentCardIndex].classList.remove('active');
+                currentCardIndex = (currentCardIndex + 1) % cards.length;
+                cards[currentCardIndex].classList.add('active');
             }
 
             setInterval(showNextCard, 100);
-          </script>
+        </script>
 </body>
 
 </html>
