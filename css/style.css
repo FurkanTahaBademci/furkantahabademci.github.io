@@ -23,6 +23,13 @@ h6 {
   color: #1e1e1e;
 }
 
+.skills-padding {
+  padding-left: 25px;
+  padding-right: 25px;
+
+}
+
+
 a {
   color: #1e1e1e;
   transition: all 0.5s ease-in-out;
