@@ -1,1 +1,0 @@
-# furkantahabademci.github.io
