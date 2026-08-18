@@ -1,0 +1,14 @@
+{
+  "name": "Furkan Taha Bademci",
+  "short_name": "F. T. Bademci",
+  "description": "Mekatronik mühendisi · Yapay zeka ve bilgisayarlı görü",
+  "lang": "tr",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#805d3f",
+  "icons": [
+    { "src": "/img/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/img/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
