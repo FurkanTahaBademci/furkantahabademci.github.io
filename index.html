@@ -12,18 +12,16 @@
     <link rel="icon" href="img/logo.png" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&amp;display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;display=swap"
         rel="stylesheet">
-    <link href="/cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style.min.css" rel="stylesheet">
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="51">
-    <div id="loading">
-        <img src="img/loader.gif" alt="Yükleniyor..." />
-
+    <div id="loading" aria-hidden="true">
+        <div class="loading-spinner"></div>
     </div>
 
     <!-- Navbar Start -->
@@ -56,7 +54,12 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-5 px-5 pl-lg-0 pb-5 pb-lg-0">
-                    <img class="img-fluid w-100 rounded-circle shadow-sm" src="img/pp.png" alt="">
+                    <picture>
+                        <source type="image/webp" srcset="img/pp-500.webp">
+                        <img class="img-fluid w-100 rounded-circle shadow-sm" src="img/pp.png"
+                            width="499" height="499" fetchpriority="high" decoding="async"
+                            alt="Furkan Taha Bademci portre fotoğrafı">
+                    </picture>
                 </div>
                 <div class="col-lg-7 text-center text-lg-left">
                     <h3 class="text-white font-weight-normal mb-3">Hello World!, I'm</h3>
@@ -89,7 +92,12 @@
             </div>
             <div class="row align-items-center">
                 <div class="col-lg-5 pb-4 pb-lg-0">
-                    <img class="img-fluid rounded w-100" src="img/ppp.png" alt="">
+                    <picture>
+                        <source type="image/webp" srcset="img/ppp-520.webp">
+                        <img class="img-fluid rounded w-100" src="img/ppp.png"
+                            width="476" height="518" loading="lazy" decoding="async"
+                            alt="Furkan Taha Bademci">
+                    </picture>
                 </div>
                 <div class="col-lg-7">
                     <h3 class="mb-4">Python Developer</h3>
@@ -136,32 +144,74 @@
             <h1 class="position-absolute text-uppercase text-primary">Photos</h1>
         </div>
 
-            <div class="card-container">
+            <div class="photo-grid">
 
-                <div class="card">
-                    <img src="img/teknofest/2023_uyz.jpg" alt="Image 1">
-                    <p>Teknofest 2023</p>
-                </div>
-                <div class="card">
-                    <img src="img/teknofest/2023_uyz_sahne.jpeg" alt="Image 1">
-                    <p>Teknofest Ulaşımda Yapay Zeka Türkiye 1.'liği</p>
-                </div>
-                <div class="card">
-                    <img src="img/teknofest/2022_uyz.jpg" alt="Image 1">
-                    <p>Teknofest 2022</p>
-                </div>
-                <div class="card">
-                    <img src="img/teknofest/2022_syz.jpeg" alt="Image 1">
-                    <p>Teknofest Sağlıkta Yapay Zeka Türkiye 3. 'lüğü</p>
-                </div>
-                <div class="card">
-                    <img src="img/teknofest/2023_uyz_toplu.jpeg" alt="Image 1">
-                    <p>Teknofest 2023</p>
-                </div>
-                <div class="card">
-                    <img src="img/teknofest/2023_hasanmandal.jpg" alt="Image 1">
-                    <p>Teknofest 2023</p>
-                </div>
+                <figure class="photo-card">
+                    <picture>
+                        <source type="image/webp" sizes="(max-width: 575px) 92vw, (max-width: 991px) 46vw, 30vw"
+                            srcset="img/teknofest/2023_uyz-600.webp 600w, img/teknofest/2023_uyz-1200.webp 1200w">
+                        <img src="img/teknofest/2023_uyz-600.jpg" sizes="(max-width: 575px) 92vw, (max-width: 991px) 46vw, 30vw"
+                            srcset="img/teknofest/2023_uyz-600.jpg 600w, img/teknofest/2023_uyz-1200.jpg 1200w"
+                            width="600" height="421" loading="lazy" decoding="async"
+                            alt="GAiA-TECH ekibi TEKNOFEST 2023 Ulaşımda Yapay Zeka yarışmasında">
+                    </picture>
+                    <figcaption>Teknofest 2023</figcaption>
+                </figure>
+                <figure class="photo-card">
+                    <picture>
+                        <source type="image/webp" sizes="(max-width: 575px) 92vw, (max-width: 991px) 46vw, 30vw"
+                            srcset="img/teknofest/2023_uyz_sahne-600.webp 600w, img/teknofest/2023_uyz_sahne-1200.webp 1200w">
+                        <img src="img/teknofest/2023_uyz_sahne-600.jpg" sizes="(max-width: 575px) 92vw, (max-width: 991px) 46vw, 30vw"
+                            srcset="img/teknofest/2023_uyz_sahne-600.jpg 600w, img/teknofest/2023_uyz_sahne-1200.jpg 1200w"
+                            width="600" height="400" loading="lazy" decoding="async"
+                            alt="TEKNOFEST 2023 Ulaşımda Yapay Zeka Türkiye birinciliği ödül töreni sahnesi">
+                    </picture>
+                    <figcaption>Teknofest Ulaşımda Yapay Zeka Türkiye 1.'liği</figcaption>
+                </figure>
+                <figure class="photo-card">
+                    <picture>
+                        <source type="image/webp" sizes="(max-width: 575px) 92vw, (max-width: 991px) 46vw, 30vw"
+                            srcset="img/teknofest/2022_uyz-600.webp 600w, img/teknofest/2022_uyz-1200.webp 1200w">
+                        <img src="img/teknofest/2022_uyz-600.jpg" sizes="(max-width: 575px) 92vw, (max-width: 991px) 46vw, 30vw"
+                            srcset="img/teknofest/2022_uyz-600.jpg 600w, img/teknofest/2022_uyz-1200.jpg 1200w"
+                            width="600" height="364" loading="lazy" decoding="async"
+                            alt="GAiA-TECH ekibi TEKNOFEST 2022 Ulaşımda Yapay Zeka yarışmasında">
+                    </picture>
+                    <figcaption>Teknofest 2022</figcaption>
+                </figure>
+                <figure class="photo-card">
+                    <picture>
+                        <source type="image/webp" sizes="(max-width: 575px) 92vw, (max-width: 991px) 46vw, 30vw"
+                            srcset="img/teknofest/2022_syz-600.webp 600w, img/teknofest/2022_syz-1200.webp 1200w">
+                        <img src="img/teknofest/2022_syz-600.jpg" sizes="(max-width: 575px) 92vw, (max-width: 991px) 46vw, 30vw"
+                            srcset="img/teknofest/2022_syz-600.jpg 600w, img/teknofest/2022_syz-1200.jpg 1200w"
+                            width="600" height="400" loading="lazy" decoding="async"
+                            alt="TEKNOFEST 2022 Sağlıkta Yapay Zeka Türkiye üçüncülüğü ödül töreni">
+                    </picture>
+                    <figcaption>Teknofest Sağlıkta Yapay Zeka Türkiye 3. 'lüğü</figcaption>
+                </figure>
+                <figure class="photo-card">
+                    <picture>
+                        <source type="image/webp" sizes="(max-width: 575px) 92vw, (max-width: 991px) 46vw, 30vw"
+                            srcset="img/teknofest/2023_uyz_toplu-600.webp 600w, img/teknofest/2023_uyz_toplu-1200.webp 1200w">
+                        <img src="img/teknofest/2023_uyz_toplu-600.jpg" sizes="(max-width: 575px) 92vw, (max-width: 991px) 46vw, 30vw"
+                            srcset="img/teknofest/2023_uyz_toplu-600.jpg 600w, img/teknofest/2023_uyz_toplu-1200.jpg 1200w"
+                            width="600" height="382" loading="lazy" decoding="async"
+                            alt="TEKNOFEST 2023 yarışma alanında GAiA-TECH ekibiyle toplu fotoğraf">
+                    </picture>
+                    <figcaption>Teknofest 2023</figcaption>
+                </figure>
+                <figure class="photo-card">
+                    <picture>
+                        <source type="image/webp" sizes="(max-width: 575px) 92vw, (max-width: 991px) 46vw, 30vw"
+                            srcset="img/teknofest/2023_hasanmandal-600.webp 600w, img/teknofest/2023_hasanmandal-1200.webp 1200w">
+                        <img src="img/teknofest/2023_hasanmandal-600.jpg" sizes="(max-width: 575px) 92vw, (max-width: 991px) 46vw, 30vw"
+                            srcset="img/teknofest/2023_hasanmandal-600.jpg 600w, img/teknofest/2023_hasanmandal-1200.jpg 1200w"
+                            width="600" height="412" loading="lazy" decoding="async"
+                            alt="TEKNOFEST 2023 ödül töreninde protokol ile birlikte">
+                    </picture>
+                    <figcaption>Teknofest 2023</figcaption>
+                </figure>
                 <!-- Daha fazla kart ekleyebilirsiniz -->
         </div>
 
@@ -182,8 +232,11 @@
                     <div class="border-left border-primary pt-2 pl-4 ml-2">
 
                         <!--div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute"
-                                style="top: 2px; left: -32px;"></i>
+                            <svg class="text-primary position-absolute" style="top: 4px; left: -32px;" width="16"
+                                height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                                <circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.5" />
+                                <circle cx="8" cy="8" r="3" />
+                            </svg>
                             <h5 class="font-weight-bold mb-1">Lorem ipsum dolor, sit amet consectetur</h5>
                             <p class="mb-2"><strong>lorem</strong> | <small>2022 - 2023</small></p>
                             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem atque nesciunt natus
@@ -192,24 +245,33 @@
                         </div-->
 
                         <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute"
-                                style="top: 2px; left: -32px;"></i>
+                            <svg class="text-primary position-absolute" style="top: 4px; left: -32px;" width="16"
+                                height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                                <circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.5" />
+                                <circle cx="8" cy="8" r="3" />
+                            </svg>
                             <h5 class="font-weight-bold mb-1">GAiA-TECH</h5>
                             <p class="mb-2"><strong>TEKNOFEST</strong> | <small>2023</small></p>
                             <p> TEKNOFEST 2023 Ulaşımda Yapay Zeka Kategorisi Türkiye Birinciliği</p>
                         </div>
 
                         <div class="position-relative mb-4">
-                            <i class="far fa-dot-circle text-primary position-absolute"
-                                style="top: 2px; left: -32px;"></i>
+                            <svg class="text-primary position-absolute" style="top: 4px; left: -32px;" width="16"
+                                height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                                <circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.5" />
+                                <circle cx="8" cy="8" r="3" />
+                            </svg>
                             <h5 class="font-weight-bold mb-1">GAiA-TECH</h5>
                             <p class="mb-2"><strong>TEKNOFEST</strong> | <small>2022</small></p>
                             <p>TEKNOFEST 2022 Ulaşımda Yapay Zeka Kategorisi Türkiye Beşinciliği </p>
                         </div>
 
                             <div class="position-relative mb-4">
-                                <i class="far fa-dot-circle text-primary position-absolute"
-                                    style="top: 2px; left: -32px;"></i>
+                                <svg class="text-primary position-absolute" style="top: 4px; left: -32px;" width="16"
+                                    height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                                    <circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.5" />
+                                    <circle cx="8" cy="8" r="3" />
+                                </svg>
                                 <h5 class="font-weight-bold mb-1">GAiA-TECH</h5>
                                 <p class="mb-2"><strong>TEKNOFEST</strong> | <small>2022</small></p>
                                 <p>TEKNOFEST 2022 Üniverste ve Üzeri Bilgisayarlı Görü ile Hastalık Tespiti Kategorisi
@@ -217,8 +279,11 @@
                             </div>
 
                             <div class="position-relative mb-4">
-                                <i class="far fa-dot-circle text-primary position-absolute"
-                                    style="top: 2px; left: -32px;"></i>
+                                <svg class="text-primary position-absolute" style="top: 4px; left: -32px;" width="16"
+                                    height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                                    <circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.5" />
+                                    <circle cx="8" cy="8" r="3" />
+                                </svg>
                                 <h5 class="font-weight-bold mb-1">Mekatronik Mühendisliği</h5>
                                 <p class="mb-2"><strong>Sakarya Uygulamalı Bilimler Üniversitesi</strong> | <small>2020
                                         -
@@ -227,8 +292,11 @@
                             </div>
 
                             <div class="position-relative mb-4">
-                                <i class="far fa-dot-circle text-primary position-absolute"
-                                    style="top: 2px; left: -32px;"></i>
+                                <svg class="text-primary position-absolute" style="top: 4px; left: -32px;" width="16"
+                                    height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                                    <circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.5" />
+                                    <circle cx="8" cy="8" r="3" />
+                                </svg>
                                 <h5 class="font-weight-bold mb-1">Mezun</h5>
                                 <p class="mb-2"><strong>Ş.M.K Anadolu Lisesi</strong> | <small>2016 - 2020</small></p>
                                 <p></p>
@@ -616,72 +684,43 @@
             <div class="container text-center py-1">
                 <div class="d-flex justify-content-center mb-1">
                     <a target="_blank" class="btn btn-light btn-social mr-2"
-                        href="https://github.com/furkantahabademci"><i class="fa-brands fa-github"></i></a>
+                        href="https://github.com/furkantahabademci"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.1.9 2.3v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"/></svg><span class="sr-only">GitHub</span></a>
                     <a target="_blank" class="btn btn-light btn-social mr-2"
-                        href="https://www.linkedin.com/in/furkan-taha-bademci-84a04b227/"><i
-                            class="fab fa-linkedin-in"></i></a>
+                        href="https://www.linkedin.com/in/furkan-taha-bademci-84a04b227/"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2M8 19H5v-9h3zM6.5 8.3a1.7 1.7 0 1 1 0-3.5 1.7 1.7 0 0 1 0 3.5M19 19h-3v-4.7c0-1.4-.6-1.9-1.4-1.9-.7 0-1.6.5-1.6 2V19h-3v-9h2.9v1.3a3.2 3.2 0 0 1 2.8-1.5c1.7 0 3.3 1 3.3 3.7z"/></svg><span class="sr-only">LinkedIn</span></a>
                     <a target="_blank" class="btn btn-light btn-social mr-2"
-                        href="https://www.instagram.com/ffurkantaha/"><i class="fab fa-instagram"></i></a>
+                        href="https://www.instagram.com/ffurkantaha/"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.9c-.1 3.2-1.6 4.8-4.9 4.9-1.3.1-1.6.1-4.9.1s-3.6 0-4.9-.1c-3.3-.2-4.8-1.7-4.9-4.9-.1-1.3-.1-1.6-.1-4.9s0-3.6.1-4.8c.1-3.3 1.6-4.8 4.9-4.9 1.3-.1 1.7-.1 4.9-.1M12 0C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.2 4.4 2.6 6.8 7 7 1.2.1 1.6.1 4.9.1s3.7 0 4.9-.1c4.4-.2 6.8-2.6 7-7 .1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.2-4.4-2.6-6.8-7-7C15.7 0 15.3 0 12 0m0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4m0 10.2a4 4 0 1 1 0-8 4 4 0 0 1 0 8m6.4-11.8a1.4 1.4 0 1 0 0 2.9 1.4 1.4 0 0 0 0-2.9"/></svg><span class="sr-only">Instagram</span></a>
                 </div>
             </div>
         </div>
         <!-- Footer End -->
 
         <!-- Scroll to Bottom -->
-        <i class="fa fa-2x fa-angle-down text-white scroll-to-bottom"></i>
+        <svg class="text-white scroll-to-bottom" width="28" height="28" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            aria-hidden="true">
+            <polyline points="6 9 12 15 18 9" />
+        </svg>
 
         <!-- Back to Top -->
-        <a href="#" class="btn btn-outline-dark px-0 back-to-top"><i class="fa fa-angle-double-up"></i></a>
-        <style>
-            .card-container {
-              display: flex;
-              flex-wrap: wrap;
-              justify-content: center;
-              max-width: 100%;
-              margin: auto;
-            }
+        <a href="#" class="btn btn-outline-dark px-0 back-to-top"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 13 12 7 18 13" /><polyline points="6 18 12 12 18 18" />
+            </svg><span class="sr-only">Başa dön</span></a>
+        <script defer src="/code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script defer src="/stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script defer src="lib/typed/typed.min.js"></script>
+        <script defer src="lib/easing/easing.min.js"></script>
+        <script defer src="lib/waypoints/waypoints.min.js"></script>
 
-            .card {
-              flex-basis: calc(33.33% - 20px);
-              margin: 10px;
-              padding: 10px;
-              box-sizing: border-box;
-              text-align: center;
-            }
+        <script defer src="mail/contact.js"></script>
 
-            .card img {
-              max-width: 100%;
-              height: auto;
-              margin-bottom: 10px;
-              border-radius: 10px;
-              object-fit: cover;
-            }
-            .card-container{
-                padding-left: 50px;
-                padding-right: 50px;
-                padding-top: 50px;
-
-            }
-
-        </style>
-
-        <script src="/code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="/stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/typed/typed.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/waypoints/waypoints.min.js"></script>
-
-        <script src="mail/contact.js"></script>
-
-        <script src="js/main.js"></script>
+        <script defer src="js/main.js"></script>
         <script>
 
-            window.addEventListener('load', fg_load)
-
-            function fg_load() {
-                document.getElementById('loading').style.display = 'none'
-
-            }
+            // Görsellerin tamamının inmesini bekleme; HTML+CSS hazır olunca kaldır.
+            document.addEventListener('DOMContentLoaded', function () {
+                document.getElementById('loading').style.display = 'none';
+            });
         </script>
 </body>
 

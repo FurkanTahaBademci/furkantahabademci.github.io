@@ -1,0 +1,13 @@
+{
+  "name": "furkantahabademci.github.io",
+  "version": "1.0.0",
+  "description": "Furkan Taha Bademci kişisel web sitesi",
+  "private": true,
+  "scripts": {
+    "build:css": "clean-css-cli -O2 -o css/style.min.css css/style.css",
+    "build": "npm run build:css"
+  },
+  "devDependencies": {
+    "clean-css-cli": "^5.6.3"
+  }
+}
