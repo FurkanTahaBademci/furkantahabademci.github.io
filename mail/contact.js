@@ -1,65 +1,82 @@
-$(function () {
+/**
+ * İletişim formu — Web3Forms (https://web3forms.com)
+ *
+ * Access key index.html içindeki gizli input'ta tutulur.
+ * Key henüz ayarlanmadıysa form, alanları doldurulmuş bir
+ * e-posta taslağı açarak yine de çalışır.
+ */
+(function () {
+    "use strict";
 
-    $("#contactForm input, #contactForm textarea").jqBootstrapValidation({
-        preventSubmit: true,
-        submitError: function ($form, event, errors) {
-        },
-        submitSuccess: function ($form, event) {
-            event.preventDefault();
-            var name = $("input#name").val();
-            var email = $("input#email").val();
-            var subject = $("input#subject").val();
-            var message = $("textarea#message").val();
+    var PLACEHOLDER = "WEB3FORMS_ACCESS_KEY_BURAYA";
+    var MAILTO = "tahafurkanbademci@gmail.com";
 
-            $this = $("#sendMessageButton");
-            $this.prop("disabled", true);
+    var form = document.getElementById("contactForm");
+    var status = document.getElementById("formStatus");
+    var button = document.getElementById("sendMessageButton");
+    if (!form || !status || !button) return;
 
-            $.ajax({
-                url: "contact.php",
-                type: "POST",
-                data: {
-                    name: name,
-                    email: email,
-                    subject: subject,
-                    message: message
-                },
-                cache: false,
-                success: function () {
-                    $('#success').html("<div class='alert alert-success'>");
-                    $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-                            .append("</button>");
-                    $('#success > .alert-success')
-                            .append("<strong>Your message has been sent. </strong>");
-                    $('#success > .alert-success')
-                            .append('</div>');
-                    $('#contactForm').trigger("reset");
-                },
-                error: function () {
-                    $('#success').html("<div class='alert alert-danger'>");
-                    $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-                            .append("</button>");
-                    $('#success > .alert-danger').append($("<strong>").text("Sorry " + name + ", it seems that our mail server is not responding. Please try again later!"));
-                    $('#success > .alert-danger').append('</div>');
-                    $('#contactForm').trigger("reset");
-                },
-                complete: function () {
-                    setTimeout(function () {
-                        $this.prop("disabled", false);
-                    }, 1000);
+    function notify(type, text) {
+        status.innerHTML =
+            '<div class="alert alert-' + type + '" role="alert">' + text + "</div>";
+    }
+
+    function fallbackToMail(data) {
+        var body =
+            "İsim: " + data.get("name") + "\n" +
+            "E-posta: " + data.get("email") + "\n\n" +
+            data.get("message");
+        window.location.href =
+            "mailto:" + MAILTO +
+            "?subject=" + encodeURIComponent(data.get("user_subject") || "") +
+            "&body=" + encodeURIComponent(body);
+    }
+
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        var data = new FormData(form);
+
+        if (data.get("access_key") === PLACEHOLDER) {
+            notify("info", "E-posta uygulaman açılıyor…");
+            fallbackToMail(data);
+            return;
+        }
+
+        button.disabled = true;
+        status.innerHTML = "";
+
+        fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: { Accept: "application/json" },
+            body: data
+        })
+            .then(function (response) {
+                return response.json().then(function (result) {
+                    return { ok: response.ok, result: result };
+                });
+            })
+            .then(function (payload) {
+                if (payload.ok) {
+                    notify("success", "<strong>Mesajın gönderildi.</strong> En kısa sürede dönüş yapacağım.");
+                    form.reset();
+                } else {
+                    throw new Error(payload.result.message || "Gönderilemedi");
                 }
+            })
+            .catch(function () {
+                notify(
+                    "danger",
+                    "Mesaj gönderilemedi. Doğrudan " +
+                        '<a href="mailto:' + MAILTO + '">' + MAILTO + "</a> adresine yazabilirsin."
+                );
+            })
+            .then(function () {
+                button.disabled = false;
             });
-        },
-        filter: function () {
-            return $(this).is(":visible");
-        },
     });
 
-    $("a[data-toggle=\"tab\"]").click(function (e) {
-        e.preventDefault();
-        $(this).tab("show");
+    form.addEventListener("input", function () {
+        status.innerHTML = "";
     });
-});
-
-$('#name').focus(function () {
-    $('#success').html('');
-});
+})();
