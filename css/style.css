@@ -10071,3 +10071,144 @@ h6,
 .back-to-top svg {
   vertical-align: middle;
 }
+
+
+/******* Projeler ********/
+.project-group-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #805d3f;
+  margin: 2.5rem 0 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  background-color: #fff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.project-card:hover,
+.project-card:focus-within {
+  border-color: #805d3f;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
+  transform: translateY(-2px);
+}
+
+.project-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.project-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: #6c757d;
+  margin-bottom: 0.9rem;
+}
+
+.project-meta-highlight {
+  color: #805d3f;
+  font-weight: 700;
+}
+
+.project-desc {
+  flex: 1 1 auto;
+  font-size: 0.95rem;
+  margin-bottom: 1.1rem;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+
+.project-tags li {
+  font-size: 0.78rem;
+  line-height: 1;
+  padding: 0.4rem 0.65rem;
+  border-radius: 999px;
+  background-color: #f3efea;
+  color: #6b5138;
+  white-space: nowrap;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  align-self: flex-start;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #805d3f;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.project-link:hover,
+.project-link:focus {
+  color: #805d3f;
+  border-bottom-color: #805d3f;
+  text-decoration: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card {
+    transition: none;
+  }
+  .project-card:hover,
+  .project-card:focus-within {
+    transform: none;
+  }
+}
+
+/******* Yetkinlik rozetleri ********/
+.skill-group {
+  margin-bottom: 1.75rem;
+}
+
+.skill-group h4 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #6c757d;
+  margin-bottom: 0.75rem;
+}
+
+.skill-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-badges li {
+  padding: 0.5rem 0.9rem;
+  border: 1px solid #e9ecef;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  background-color: #fff;
+}
