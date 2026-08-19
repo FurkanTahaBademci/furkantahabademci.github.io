@@ -85,6 +85,7 @@
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="51">
+    <a class="skip-link" href="#content">İçeriğe geç</a>
     <div id="loading" aria-hidden="true">
         <div class="loading-spinner"></div>
     </div>
@@ -114,7 +115,8 @@
     <!-- Navbar End -->
 
     <!-- Header Start -->
-    <div class="container-fluid bg-primary d-flex align-items-center mb-5 py-5" id="home" style="min-height: 100vh;">
+    <main id="content">
+    <header class="container-fluid bg-primary d-flex align-items-center mb-5 py-5" id="home" style="min-height: 100vh;">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-5 px-5 pl-lg-0 pb-5 pb-lg-0">
@@ -139,16 +141,16 @@
                 </div>
             </div>
         </div>
-    </div>
+    </header>
     <!-- Header End -->
 
 
     <!-- About Start -->
-    <div class="container-fluid py-5" id="about">
+    <section class="container-fluid py-5" id="about" aria-labelledby="about-title">
         <div class="container">
             <div class="position-relative d-flex align-items-center justify-content-center">
-                <h2 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Hakkımda</h2>
-                <h2 class="position-absolute text-uppercase text-primary">Hakkımda</h2>
+                <h2 aria-hidden="true" class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Hakkımda</h2>
+                <h2 id="about-title" class="position-absolute text-uppercase text-primary">Hakkımda</h2>
             </div>
             <div class="row align-items-center">
                 <div class="col-lg-5 pb-4 pb-lg-0">
@@ -169,40 +171,44 @@
                         üçüncülüğü kazandık.</p>
                     <p>Mekatronik altyapım sayesinde işin yalnızca model tarafında değil, gömülü
                         sistemler ve donanım haberleşmesi tarafında da çalışabiliyorum.</p>
-                    <div class="row mb-3">
+                    <dl class="row mb-3 about-facts">
                         <div class="col-sm-6 py-2">
-                            <h6>İsim: <span class="text-secondary">Furkan Taha Bademci</span></h6>
+                            <dt>İsim</dt>
+                            <dd>Furkan Taha Bademci</dd>
                         </div>
                         <div class="col-sm-6 py-2">
-                            <h6>Derece: <span class="text-secondary">Lisans &mdash; Mekatronik Mühendisliği</span></h6>
+                            <dt>Derece</dt>
+                            <dd>Lisans &mdash; Mekatronik Mühendisliği</dd>
                         </div>
                         <div class="col-sm-6 py-2">
-                            <h6>Odak: <span class="text-secondary">Derin öğrenme, bilgisayarlı görü</span></h6>
+                            <dt>Odak</dt>
+                            <dd>Derin öğrenme, bilgisayarlı görü</dd>
                         </div>
                         <div class="col-sm-6 py-2">
-                            <h6>E-posta: <span class="text-secondary"><a
-                                        href="mailto:tahafurkanbademci@gmail.com">tahafurkanbademci@gmail.com</a></span>
-                            </h6>
+                            <dt>E-posta</dt>
+                            <dd><a href="mailto:tahafurkanbademci@gmail.com">tahafurkanbademci@gmail.com</a></dd>
                         </div>
                         <div class="col-sm-6 py-2">
-                            <h6>Konum: <span class="text-secondary">Türkiye</span></h6>
+                            <dt>Konum</dt>
+                            <dd>Türkiye</dd>
                         </div>
                         <div class="col-sm-6 py-2">
-                            <h6>Durum: <span class="text-secondary">Çalışıyor</span></h6>
+                            <dt>Durum</dt>
+                            <dd>Çalışıyor</dd>
                         </div>
-                    </div>
+                    </dl>
                     <a href="#contact" class="btn btn-outline-primary mr-4">Bana Ulaş</a>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
     <!-- About End -->
     <!-- Projects Start -->
-    <div class="container-fluid py-5" id="projects">
+    <section class="container-fluid py-5" id="projects" aria-labelledby="projects-title">
         <div class="container">
             <div class="position-relative d-flex align-items-center justify-content-center">
-                <h2 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Projeler</h2>
-                <h2 class="position-absolute text-uppercase text-primary">Projeler</h2>
+                <h2 aria-hidden="true" class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Projeler</h2>
+                <h2 id="projects-title" class="position-absolute text-uppercase text-primary">Projeler</h2>
             </div>
             <h3 class="project-group-title">TEKNOFEST</h3>
             <div class="project-grid">
@@ -323,15 +329,15 @@
                 </article>
             </div>
         </div>
-    </div>
+    </section>
     <!-- Projects End -->
 
     <!-- Qualification Start -->
-    <div class="container-fluid py-5" id="qualification">
+    <section class="container-fluid py-5" id="qualification" aria-labelledby="qualification-title">
         <div class="container">
             <div class="position-relative d-flex align-items-center justify-content-center">
-                <h2 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Eğitim</h2>
-                <h2 class="position-absolute text-uppercase text-primary">Eğitim &amp; Deneyim</h2>
+                <h2 aria-hidden="true" class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Eğitim</h2>
+                <h2 id="qualification-title" class="position-absolute text-uppercase text-primary">Eğitim &amp; Deneyim</h2>
             </div>
 
             <div class="row align-items-center">
@@ -383,16 +389,16 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
     <!-- Qualification End -->
 
 
         <!-- Skill Start -->
-        <div class="container-fluid py-5" id="skill">
+        <section class="container-fluid py-5" id="skill" aria-labelledby="skill-title">
             <div class="container">
                 <div class="position-relative d-flex align-items-center justify-content-center">
-                    <h2 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Yetkinlikler</h2>
-                    <h2 class="position-absolute text-uppercase text-primary">Yetkinlikler</h2>
+                    <h2 aria-hidden="true" class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Yetkinlikler</h2>
+                    <h2 id="skill-title" class="position-absolute text-uppercase text-primary">Yetkinlikler</h2>
                 </div>
                 <div class="row">
                     <div class="col-12">
@@ -457,13 +463,13 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
         <!-- Skill End -->
 
-    <div class="container-fluid py-5" id="photos">
+    <section class="container-fluid py-5" id="photos" aria-labelledby="photos-title">
         <div class="position-relative d-flex align-items-center justify-content-center">
-            <h2 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Anlar</h2>
-            <h2 class="position-absolute text-uppercase text-primary">Fotoğraflar</h2>
+            <h2 aria-hidden="true" class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Anlar</h2>
+            <h2 id="photos-title" class="position-absolute text-uppercase text-primary">Fotoğraflar</h2>
         </div>
 
             <div class="photo-grid">
@@ -537,17 +543,17 @@
                 <!-- Daha fazla kart ekleyebilirsiniz -->
         </div>
 
-    </div>
+    </section>
 
 
 
         <!-- Contact Start -->
-        <div class="container-fluid py-5" id="contact">
+        <section class="container-fluid py-5" id="contact" aria-labelledby="contact-title">
             <div class="container">
                 <div class="position-relative d-flex align-items-center justify-content-center">
-                    <h2 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">İletişim
+                    <h2 aria-hidden="true" class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">İletişim
                     </h2>
-                    <h2 class="position-absolute text-uppercase text-primary">Bana Ulaşın</h2>
+                    <h2 id="contact-title" class="position-absolute text-uppercase text-primary">Bana Ulaşın</h2>
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
@@ -598,11 +604,13 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
+    </main>
+
         <!-- Contact End -->
 
         <!-- Footer Start -->
-        <div class="container-fluid bg-primary text-white mt-5 py-5 px-sm-3 px-md-5">
+        <footer class="container-fluid bg-primary text-white mt-5 py-5 px-sm-3 px-md-5">
             <div class="container text-center py-1">
                 <div class="d-flex justify-content-center mb-1">
                     <a target="_blank" rel="noopener" class="btn btn-light btn-social mr-2"
@@ -613,7 +621,7 @@
                         href="https://www.instagram.com/ffurkantaha/"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.9c-.1 3.2-1.6 4.8-4.9 4.9-1.3.1-1.6.1-4.9.1s-3.6 0-4.9-.1c-3.3-.2-4.8-1.7-4.9-4.9-.1-1.3-.1-1.6-.1-4.9s0-3.6.1-4.8c.1-3.3 1.6-4.8 4.9-4.9 1.3-.1 1.7-.1 4.9-.1M12 0C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.2 4.4 2.6 6.8 7 7 1.2.1 1.6.1 4.9.1s3.7 0 4.9-.1c4.4-.2 6.8-2.6 7-7 .1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.2-4.4-2.6-6.8-7-7C15.7 0 15.3 0 12 0m0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4m0 10.2a4 4 0 1 1 0-8 4 4 0 0 1 0 8m6.4-11.8a1.4 1.4 0 1 0 0 2.9 1.4 1.4 0 0 0 0-2.9"/></svg><span class="sr-only">Instagram</span></a>
                 </div>
             </div>
-        </div>
+        </footer>
         <!-- Footer End -->
 
         <!-- Scroll to Bottom -->
@@ -636,6 +644,24 @@
         <script defer src="mail/contact.js"></script>
 
         <script defer src="js/main.js"></script>
+
+        <!--
+            Ziyaret sayacı — GoatCounter: çerezsiz, KVKK/GDPR uyumlu, çerez uyarısı gerektirmez.
+            goatcounter.com/signup adresinden bir kod al ve aşağıdaki KOD değerini onunla değiştir.
+            Kod ayarlanana kadar hiçbir istek yapılmaz.
+        -->
+        <script>
+            (function () {
+                var KOD = 'GOATCOUNTER_KODU';
+                if (KOD.indexOf('GOATCOUNTER') === 0) return;   // henüz ayarlanmadı
+
+                var s = document.createElement('script');
+                s.async = true;
+                s.src = 'https://gc.zgo.at/count.js';
+                s.setAttribute('data-goatcounter', 'https://' + KOD + '.goatcounter.com/count');
+                document.head.appendChild(s);
+            })();
+        </script>
         <script>
 
             // Görsellerin tamamının inmesini bekleme; HTML+CSS hazır olunca kaldır.
