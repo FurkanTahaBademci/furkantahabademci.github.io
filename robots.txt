@@ -1,4 +1,2 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://furkantahabademci.github.io/sitemap.xml
